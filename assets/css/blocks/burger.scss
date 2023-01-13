@@ -1,0 +1,69 @@
+.burger{
+   display: none;
+ 
+   width: 3rem;
+   height: 2rem;
+   position: absolute;
+   background: none;
+   padding: 0;
+   border: 0;
+   top: 50%;
+   font-size: 0;
+   color: transparent;
+   left: 1.5rem;
+   transform: translateY(-50%);
+
+   &::after,
+   &::before,
+   span{
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $white;
+      left: 0;
+      position: absolute;
+   }
+
+   &::after,
+   &::before{
+      content: "";
+      transition: transform .2s linear;
+   }
+
+   &::after{
+      bottom: 0;
+   }
+
+   &::before{
+      top: 0;
+   }
+
+   span{
+      top: 50%;
+      transform: translateY(-50%);
+      transition: opacity .2s linear;
+   }
+
+   .show-sidebar &{
+      span{
+         opacity: 0;
+      }
+
+      &::after,
+      &::before{
+         top: 50%;
+      }
+   
+      &::before{
+         transform:rotate(45deg);
+      }
+      &::after{
+         transform:rotate(-45deg);
+      }
+   }
+
+   @include brakepoint($tablet-bp){
+      display: block;
+   }
+}
+

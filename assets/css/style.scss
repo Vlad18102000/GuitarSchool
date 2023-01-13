@@ -1,0 +1,58 @@
+@import "vars";
+@import "mixins";
+@import "vendor/reset.scss";
+
+
+
+html{
+    font-size: 62.5%;
+}
+body {
+    background-color: #181818;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe\ UI,Roboto,Helvetica\ Neue,Arial,Noto\ Sans,sans-serif;
+    font-size: 1.4rem;
+    color: white;
+    line-height: 1.5;
+    
+    &.no-scroll{
+            overflow: hidden
+        }
+    
+        @include brakepoint($tablet-bp){
+            &.show-sidebar{
+                overflow: hidden
+            }
+         }
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+
+
+@import "blocks/page.scss";
+@import "blocks/header.scss";
+@import "blocks/container.scss";
+@import "blocks/sidebar.scss";
+@import "blocks/main.scss";
+@import "blocks/profile.scss";
+@import "blocks/social.scss";
+@import "blocks/btn.scss";
+@import "blocks/nav.scss";
+@import "blocks/search.scss";
+// @import "blocks/stories.scss";
+// @import "blocks/addpost.scss";
+// @import "blocks/post.scss";
+// @import "blocks/embed.scss";
+// @import "blocks/pagination.scss";
+// @import "blocks/related.scss";
+// @import "blocks/comments.scss";
+@import "blocks/form.scss";
+// @import "blocks/work.scss";
+// @import "blocks/cabinet.scss";
+@import "blocks/modal.scss";
+@import "blocks/burger.scss";
+@import "blocks/footer.scss";

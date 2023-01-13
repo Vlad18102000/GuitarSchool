@@ -1,0 +1,16 @@
+.social{
+   display: flex;
+   justify-content: center;
+   margin: 20px 0 20px 0;
+   @include brakepoint($tablet-bp){
+      display: none;
+   }
+}
+.social__item{
+   margin: 0 1.75rem;
+
+}
+.socila__item-img{
+   width: 30px;
+   height: 30px;
+}

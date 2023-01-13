@@ -1,0 +1,28 @@
+.footer{
+   display: flex;
+   width:calc(100% - 300px) ;
+   color: rgba($white,.7);
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   z-index: 1001;
+   background-color: #0d0d0d;
+   box-shadow: 0 5px 22px rgba(0,0,0,.25);
+
+   @include brakepoint($tablet-bp){
+      width: 100%;
+   }
+}
+.footer__content{
+   margin: 0 auto;
+}
+.footer__link{
+   margin-left: 10px;
+   color: rgba($white,.7);
+   text-decoration: none;
+   transition: color .2s linear;
+   &:hover{
+      color: rgba($white,1);
+      text-decoration: underline;
+   }
+}

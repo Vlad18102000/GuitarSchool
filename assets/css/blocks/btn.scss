@@ -1,0 +1,46 @@
+.btn{
+   display: inline-block;
+   vertical-align: top;
+   background:$secondary;
+   padding: 1.1em 2.1em;
+   border: 0;
+   cursor: pointer;
+   border-radius: 3em;
+   font-size: 1.2rem;
+   font-weight: 500;
+   font-family: inherit;
+   line-height: 1.1;
+   color: $white;
+   text-decoration: none;
+   transition: background-color .2s linear;
+
+   &--red{
+      background-color: #ed3024;
+      box-shadow:0 7px 17px -10px rgba(#ed3024,.2);
+      &:hover{
+         background-color: #a4190f;
+      }
+   }  
+
+   &--blue{
+      background-color: #3137c9;
+      box-shadow:0 7px 17px -10px rgba(#3137c9,.2);
+      &:hover{
+         background-color: #191eb6;
+      }
+   }
+
+   &--rounded{
+      border-radius: 0.41em;
+   }
+
+   &--sm{
+      padding: .7em 1.24em ;
+   }
+   &--disabled{
+      background-color: rgba(#191eb6,.7);
+      &:hover{
+         background-color: rgba(#191eb6,.7);
+      }
+   }
+}
