@@ -45,7 +45,7 @@ body {
 @import "blocks/search.scss";
 // @import "blocks/stories.scss";
 // @import "blocks/addpost.scss";
-// @import "blocks/post.scss";
+@import "blocks/courseDetails.scss";
 // @import "blocks/embed.scss";
 // @import "blocks/pagination.scss";
 // @import "blocks/related.scss";
@@ -56,3 +56,4 @@ body {
 @import "blocks/modal.scss";
 @import "blocks/burger.scss";
 @import "blocks/footer.scss";
+@import "blocks/courses.scss";

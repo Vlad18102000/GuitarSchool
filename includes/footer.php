@@ -139,11 +139,12 @@
     </div>  
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
 
 <script src="./assets/js/mobileNav.js" ></script>
 <script src="./assets/js/modal.js" ></script>
 <script src="./assets/js/textarea.js" ></script>
+<script src="./assets/js/filter.js" ></script>
 <script src="./assets/js/ajaxAdmin.js" ></script>
 <script src="./assets/js/ajaxStudent.js" ></script>
 

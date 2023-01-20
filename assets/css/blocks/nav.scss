@@ -24,6 +24,12 @@
    @include brakepoint($tablet-bp){
       flex-direction: column;
    }
+
+   &--admin{
+      display: inline-block;
+      margin-top: 100px;
+      width: 100%;
+   }
 }
 
 .nav__item{
@@ -80,7 +86,17 @@
 
       font-size: 1.6rem;
 }
+
+&--admin{
+   font-size: 1.4rem;
+   line-height: 1.2;
 }
+
+&--admin i {
+   padding-right: 10px;
+}
+}
+
 
 
 .subnav{

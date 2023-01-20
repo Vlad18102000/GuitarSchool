@@ -43,11 +43,20 @@
       flex-grow: 1;
    }
 
+   &--admin{
+      margin-top: 0;
+      border-bottom: 1px solid rgba($white, .1);
+      padding-bottom: 1S0px;
+   }
 }
 .sidebar__footer{
    padding: 0 3rem;
    display: flex;
    justify-content: space-between;
+
+   &--admin{
+      margin-top: 20px;
+   }
 }
 .profile__logoname{
    display: flex;
