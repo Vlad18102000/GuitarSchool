@@ -708,6 +708,10 @@ body.no-scroll {
 .btn--disabled:hover {
   background-color: rgba(25, 30, 182, 0.7);
 }
+.btn--db {
+  margin-top: 10px;
+  display: block;
+}
 
 .nav--mobile {
   display: none;
@@ -1130,6 +1134,10 @@ body.no-scroll {
   margin-bottom: 2.5rem;
 }
 
+.form__label {
+  color: rgba(255, 255, 255, 0.2);
+}
+
 .form__control {
   display: block;
   width: 100%;
@@ -1146,13 +1154,30 @@ body.no-scroll {
 .form__control::placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
+.form__control--color {
+  color: rgba(255, 255, 255, 0.2);
+}
 .form__control--textarea {
   height: 32px;
   overflow: hidden;
   resize: none;
+  display: inline;
 }
 .form__control:focus + .form__line {
   width: 100%;
+}
+.form__control:last-child {
+  border-bottom: none;
+}
+
+.form__upload {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.upload__span {
+  margin-left: 10px;
 }
 
 .form__line {
@@ -1185,6 +1210,34 @@ body.no-scroll {
 }
 .form__footer-list a {
   color: #fff;
+}
+
+.form__label {
+  font-size: 15px;
+}
+
+.form__center {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.form__button {
+  margin-right: 20px;
+}
+
+.form__select {
+  color: #000;
+  border: 0;
+}
+
+.form__danger {
+  padding: 10px;
+  color: red;
+}
+
+.form__danger {
+  padding: 10px;
+  color: red;
 }
 
 .modal {
@@ -1275,6 +1328,7 @@ body.no-scroll {
 
 .modal__span-success {
   background-color: #08d653;
+  display: inline-block;
 }
 
 .modal__span-unsuccess {
@@ -1507,6 +1561,134 @@ body.no-scroll {
 
 .course__hide {
   display: none;
+}
+
+.admin__area {
+  margin-top: 80px;
+  width: calc(100% - 300px);
+  margin-left: 300px;
+}
+@media screen and (max-width: 991px) {
+  .admin__area {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+
+.dashboard-info__items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem 2.8rem;
+}
+
+.dashboard-info__col {
+  flex-basis: 33.3333%;
+  padding: 1rem;
+}
+@media screen and (max-width: 991px) {
+  .dashboard-info__col {
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .dashboard-info__col {
+    flex-basis: 100%;
+  }
+}
+
+.dashboard-info__item {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  background-color: rgba(49, 55, 201, 0.75);
+}
+@media screen and (max-width: 991px) {
+  .dashboard-info__item {
+    max-width: 370px;
+  }
+}
+@media screen and (max-width: 575px) {
+  .dashboard-info__item {
+    margin: 0 auto;
+  }
+}
+.dashboard-info__item--stud {
+  background-color: #ed3024;
+}
+.dashboard-info__item--sold {
+  background-color: rgba(40, 156, 122, 0.75);
+}
+
+.dashboard-info__title {
+  font-family: sans-serif;
+  font-size: 17px;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dashboard-info__content {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-info__num {
+  font-size: 23px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.dashboard-info__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+.dashboard-info__link:hover {
+  text-decoration: underline;
+}
+
+.dashboard__table-title {
+  text-align: center;
+  padding: 10px;
+  background-color: #121212;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table__header {
+  padding-top: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.table__header-items {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.table__info {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table__inline {
+  display: inline;
+}
+
+.add__course {
+  text-align: right;
+  margin-top: 50px;
+}
+
+.ml-10 {
+  margin-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

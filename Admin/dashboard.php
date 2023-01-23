@@ -1,127 +1,87 @@
-<!DOCTYPE html>
-<html lang="pl-PL">
+<?php
+if(!isset($_SESSION)){
+   session_start();
+}
+include_once("includes/header.php");
+include_once("../configDb.php");
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Useful meta tags -->
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="index, follow">
-    <meta name="google" content="notranslate">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="">
-    
-    <title>GuitarSchool | AdminArea</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-</head>
-<body>
-   <div class="page" id="page">
-      <header class="header">
-         <div class="header__left">
-            <button class="burger active" type="button" id="sidebarToggle">
-               <span>Burger</span>
-            </button>
-         </div>
-         <div class="header__right">
-            <form class="search" action="/" method="post">
-               <input class="search__input" type="text" placeholder="Szukaj w serwisie...">
-            </form>
-         </div>
-      </header>
+if(isset($_SESSION['admin_has_logged'])){
+   $adminEmail = $_SESSION['adminEmail'];
+}else{
+   echo "<script>location.href='../index.php';</script>";
+}
+?>
+      <div class="admin__area">
+         <div class="container--courses">
+            <div class="dashboard__info">
+               <div class="dashboard-info__items">
+                  <div class="dashboard-info__col">
+                     <div class="dashboard-info__item">
+                        <div class="dashboard-info__title">Courses</div>
+                        <div class="dashboard-info__content">
+                           <h4 class="dashboard-info__num">5</h4>
+                           <a href="#" class="dashboard-info__link">View</a>
+                        </div>
+                     </div>
+                  </div>
 
-      <aside class="sidebar" id="sidebar">
-         <div class="sidebar__content--admin">
-            <div class="profile__logoname">
-               <a href="dashboard.php" class="logo__name">Admin Area</a>
+                  <div class="dashboard-info__col">
+                     <div class="dashboard-info__item dashboard-info__item--stud">
+                        <div class="dashboard-info__title">Students</div>
+                        <div class="dashboard-info__content">
+                           <h4 class="dashboard-info__num">14</h4>
+                           <a href="#" class="dashboard-info__link">View</a>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="dashboard-info__col">
+                     <div class="dashboard-info__item dashboard-info__item--sold">
+                        <div class="dashboard-info__title">Sold</div>
+                        <div class="dashboard-info__content">
+                           <h4 class="dashboard-info__num">3</h4>
+                           <a href="#" class="dashboard-info__link">View</a>
+                        </div>
+                     </div>
+                  </div>
+                 
+               </div>
+            </div>
+
+            <div class="dashboard__table">
+               <div class="dashboard__table-title">Course Ordered</div>
+
+               <table class="table">
+                  <thead>
+                     <tr class="table__header">
+                        <th scope="col" class="table__info">Order ID</th>
+                        <th scope="col" class="table__info">Course ID</th>
+                        <th scope="col" class="table__info">Student Email</th>
+                        <th scope="col" class="table__info">Order Date</th>
+                        <th scope="col" class="table__info">Amount</th>
+                        <th scope="col" class="table__info">Action</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                  <tr class="table__content">
+                        <th scope="col" class="table__info">22</th>
+                        <td  class="table__info">100</td>
+                        <td  class="table__info">potapovpotapov@gmail.com</td>
+                        <td  class="table__info">01.01.2023</td>
+                        <td  class="table__info">300</td>
+                        <td  class="table__info">
+                           <button class="btn btn--sm btn--red" type="submit" name="delete" value="Delete">
+                           <i class="fa-solid fa-trash"></i>
+                           </button>
+                        </td>
+                  </tr>
+                  
+                  </tbody>
+               </table>
             </div>
          </div>
-      
-         <div class="sidebar__content">
-            <nav class="nav nav--admin">
-               <ul class="nav__list nav__list--admin">
-                  <li class="nav__item nav__item--admin">
-                     <a class="nav__link nav__link--admin" href="dashboard.php">
-                        <i class="fa-solid fa-gauge"></i>Dashboard
-                     </a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
-                     <i class="fa-regular fa-compass"></i> Courses</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
-                     <i class="fa-solid fa-person-chalkboard"></i>Lessons</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
-                     <i class="fa-solid fa-people-group"></i> Students</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
-                     <i class="fa-solid fa-table"></i>Report</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
-                     <i class="fa-solid fa-credit-card"></i>Payment Status</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
-                     <i class="fa-solid fa-message"></i>Feedback</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
-                     <i class="fa-solid fa-lock"></i>Change Password</a>
-                  </li>
-                 
-               </ul>
-            </nav>
-         </div>
-          
-      <div class="sidebar__footer sidebar__footer--admin" >
-         <a class="btn btn--red" href="../logout.php">Logout</a>
       </div>
-         
-
-            <nav class="nav nav--mobile">
-               <ul class="nav__list">
-                  <li class="nav__item">
-                     <a class="nav__link" href="index.php">Strona główna</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Payment Status</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Feedback</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Contact</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Profile</a>
-                  </li>
-                  <!-- <li class="nav__item">
-                     <a class="nav__link" href="#">Profile</a>
-                  </li> -->
-               </ul>
-               <!-- 
-               <div class="sidebar__footer">
-                  <a class="btn btn--red" href="works.html">Login</a>
-                  <button class="btn btn--blue" type="button" data-modal="contact-modal">SignUp</button>
-               </div> -->
-            </nav>
-         
-     
-         
-      </aside>
-
-<script src="../assets/js/mobileNav.js" ></script>
-<script src="../assets/js/textarea.js" ></script>
-<script src="../assets/js/ajaxAdmin.js" ></script>
-
-
-</body>
-</html>
+      
+<?php
+include_once("includes/footer.php");
+?>

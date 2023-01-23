@@ -1,0 +1,119 @@
+.admin__area{
+   margin-top: 80px;
+   width:calc(100% - 300px);
+   // margin-left: 50px;
+   margin-left: 300px;
+   
+   @include brakepoint($tablet-bp){
+      // width: 100%;
+      width: 100%;
+      margin-left: 0px;
+      
+   }
+   // @include brakepoint($mobile-bp){
+   //    margin: 0 auto;
+   // }
+}
+.dashboard-info__items{
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 -1rem 2.8rem;
+}
+
+.dashboard-info__col{
+   flex-basis: 33.3333%;
+   padding: 1rem;
+
+   @include brakepoint($tablet-bp){
+      //width: 50%;
+      flex-basis: 50%;
+   }
+
+   @include brakepoint($mobile-bp){
+      flex-basis: 100%;
+      
+   }
+}
+.dashboard-info__item{
+   overflow: hidden;
+   border-radius: 10px;
+   box-shadow: 0 0 4px rgba(#000,.25);
+   width: 100%;
+   background-color: rgba($blue,.75);
+   @include brakepoint($tablet-bp){
+      max-width: 370px;
+   }
+   @include brakepoint($mobile-bp){
+      margin: 0 auto;
+   }
+   &--stud{
+      background-color: #ed3024;
+   }
+   &--sold{
+      background-color: rgba(rgb(40, 156, 122),.75);
+   }
+}
+.dashboard-info__title{
+   font-family: sans-serif;
+   font-size: 17px;
+   padding: 10px;
+   text-align: center;
+   border-bottom: 1px solid rgba($white,.2);
+}
+.dashboard-info__content{
+   text-align: center;
+   margin-bottom: 30px;
+}
+.dashboard-info__num{
+   font-size: 23px;
+   margin-top: 40px;
+   margin-bottom: 30px;
+   
+}
+.dashboard-info__link{
+   text-decoration: none;
+   color: $white;
+   font-size: 16px;
+   &:hover{
+      text-decoration: underline;
+   }
+
+}
+
+.dashboard__table-title{
+   text-align: center;
+   padding: 10px;
+   background-color: $secondary;
+   font-size: 18px;
+   margin-bottom: 30px;
+}
+.table{
+   width: 100%;
+   
+}
+.table__header{
+   padding-top: 20px;
+   border-bottom: 1px solid rgba($white, .2);
+}
+.table__header-items{
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+}
+.table__info{
+   padding-bottom: 20px;
+   padding-top: 20px;
+   text-align: center;
+   vertical-align: middle;
+
+}
+.table__inline{
+   display: inline;
+}
+.add__course{
+   text-align: right;
+  margin-top: 50px;
+}
+.ml-10{
+   margin-left: 10px;
+}

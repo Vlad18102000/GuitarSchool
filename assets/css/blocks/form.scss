@@ -1,4 +1,5 @@
 .form{
+   
    &--auth{
       max-width: 280px;
       margin: 0 auto;
@@ -11,6 +12,11 @@
    &--md{
       margin-bottom: 2.5rem;
    }
+
+}
+
+.form__label{
+   color: rgba($white,.2);
 }
 .form__control{
    display: block;
@@ -28,17 +34,36 @@
    &::placeholder{
       color: rgba($white,.2);
    }
+   &--color{
+      color: rgba($white,.2);
+   }
 
    &--textarea{
       height: 32px;
       overflow: hidden;
       resize: none;
+      display: inline;
    }
+
 
    &:focus + .form__line {
       width: 100%;
    }
+
+   &:last-child{
+      border-bottom: none;
+   }
+
 }
+.form__upload{
+   margin-top: 15px;
+   display: flex;
+   align-items: center;
+}
+.upload__span{
+   margin-left: 10px;
+}
+
 .form__line{
    width: 0px;
    height: 1px;
@@ -71,6 +96,29 @@
    a{
       color: $white;
    }
+}
+.form__label{
+   font-size: 15px;
+}
+.form__center{
+   text-align: center;
+   margin-top: 80px;
+
+}
+.form__button{
+   margin-right: 20px;
+}
+.form__select{
+   color: $black;
+   border: 0;
+}
+.form__danger{
+   padding: 10px;
+   color: red;
+}
+.form__danger{
+   padding: 10px;
+   color: red;
 }
 
 // .sign__in-form{

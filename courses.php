@@ -28,7 +28,7 @@
                         <div class="course__price">
                         Cena : <del>199$</del> 
                         </div>
-                       <button class = "btn btn--blue btn--sm  btn--rounded">Buy</button>
+                     <button class = "btn btn--blue btn--sm  btn--rounded">Buy</button>
                      </div>
                   </div>
                </div>
