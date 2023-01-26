@@ -86,6 +86,10 @@
    background-color: $secondary;
    font-size: 18px;
    margin-bottom: 30px;
+
+   &.mt{
+      margin-top: 40px;
+   }
 }
 .table{
    width: 100%;

@@ -1,3 +1,27 @@
+<?php
+include_once("configDb.php");
+
+// if(isset($_SESSION)){
+//    session_start();
+// }
+
+if(isset($_SESSION['student_has_logged'])){
+   $studentLoginEmail = $_SESSION['studentLoginEmail'];
+}
+
+if(isset($studentLoginEmail)){
+   $query = "SELECT * FROM students WHERE student_email = '$studentLoginEmail'";
+   $answer = $con->query($query);
+   $row = $answer->fetch_assoc();
+   $student_name = $row['student_name'];
+   $student_img = $row['student_img'];
+   $student_description = $row['student_occupation'];
+   
+   
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="pl-PL">
 
@@ -54,7 +78,7 @@
                      if(isset($_SESSION['student_has_logged'])){
                         echo '
                         <li class="nav__item">
-                           <a class="nav__link" href="#">My Profile</a>
+                           <a class="nav__link" href="./Student/profile.php">My Profile</a>
                         </li>
                         <li class="nav__item">
                            <a class="nav__link" href="logout.php">Logout</a>
@@ -85,6 +109,7 @@
          <?php
          //session_start();
          if(!isset($_SESSION['student_has_logged'])){
+
             echo ' <div class="sidebar__content1">
                      <nav class="nav nav--logout">
                      <div class="profile__logoname">
@@ -124,14 +149,22 @@
                      </div>
                   </div>';
          }else{
+            $studentLoginEmail = $_SESSION['studentLoginEmail'];
+            $query = "SELECT * FROM students WHERE student_email = '$studentLoginEmail'";
+            $answer = $con->query($query);
+            $row = $answer->fetch_assoc();
+            $student_name = $row['student_name'];
+            //$student_img = $row['student_img'];
+            $student_img = substr($row['student_img'], 1);
+            $student_description = $row['student_occupation'];
             echo '
             <div class="sidebar__content">
                <div class="profile">
          
-                  <img class="profile__avatar" src="https://via.placeholder.com/100" alt="">
+                  <img class="profile__avatar" src="'.$student_img.'" alt="">
                   <div class="profile__header">
-                     <div class=" profile__name">Vladyslav Potapov</div>
-                     <div class="profile__prof">Programista</div>
+                     <div class=" profile__name">'.$student_name.'</div>
+                     <div class="profile__prof">'.$student_description.'</div>
                   </div>
 
                   <div class="profile__text">
@@ -149,7 +182,8 @@
                <button class="btn btn--blue" type="button" data-modal="contact-modal">Moje Kursy</button>
             </div>';
          }
-
+      
+         
          ?> 
 
             <nav class="nav nav--mobile">

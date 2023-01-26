@@ -25,8 +25,8 @@ if(isset($_REQUEST['courseSubmitBtn'])){
       $course_category = $_REQUEST['course_category'];
       $course_new_price = $_REQUEST['course_new_price'];
       $course_original_price = $_REQUEST['course_original_price'];
-      $course_img = $_FILES['course_img']['name'];
-      $course_img_temp = $_FILES['course_img']['tmp_name'];
+      $course_img = $_FILES['upload_file']['name'];
+      $course_img_temp = $_FILES['upload_file']['tmp_name'];
       $img_folder = '../assets/img/courseImg/'.$course_img;
       move_uploaded_file($course_img_temp, $img_folder);
 
@@ -98,7 +98,7 @@ if(isset($_REQUEST['courseSubmitBtn'])){
          
             <div class="form__group form__group--md">
                <label class="form__label">Select Course Image</label>
-               <input type="file" class="" hidden="hidden" id="course_img" name='course_img'>
+               <input type="file" class="" hidden="hidden" id="upload_file" name='upload_file'>
                <div class="form__upload">
                   <label id="upload_btn" class="btn btn--sm btn--blue">Add Image</label>
                   <span class="upload__span" id="upload_text">Nie wybrano pliku</span>

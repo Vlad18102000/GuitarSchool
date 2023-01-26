@@ -1,5 +1,5 @@
 function adminLogin() {
-   console.log("aa");
+
    let adminEmail = $("#adminEmail").val();
    let adminPassword = $("#adminPassword").val();
    $.ajax({
@@ -13,6 +13,7 @@ function adminLogin() {
       },
       success: function (data) {
          if (data == 0) {
+            console.log(data);
             $("#logMsgInvalid1").html("<span style='color:red;'>Invalid Email or Password</span>");
          } else if (data == 1) {
             $("#logMsgInvalid1").html(" ");

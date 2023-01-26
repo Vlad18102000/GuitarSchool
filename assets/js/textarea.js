@@ -1,6 +1,6 @@
 window.onload = () => {
    const textarea = document.querySelectorAll('[data-autoresize]');
-   const uploadFile = document.getElementById("course_img");
+   const uploadFile = document.getElementById("upload_file");
    const uploadBtn = document.getElementById("upload_btn");
    const uploadText = document.getElementById("upload_text");
 
@@ -12,6 +12,7 @@ window.onload = () => {
    uploadFile.addEventListener("change", function () {
       if (uploadFile.value) {
          uploadText.innerText = uploadFile.value.match(/[\/\\]([\w\d\s\.\-(\)]+)$/)[1];
+         uploadText.style.display = 'block';
 
       } else {
          uploadText.innerText = "Nie wybrano pliku";

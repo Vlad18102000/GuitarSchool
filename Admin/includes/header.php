@@ -53,7 +53,7 @@
                      <i class="fa-regular fa-compass"></i> Courses</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
+                     <a class="nav__link nav__link--admin" href="lessons.php">
                      <i class="fa-solid fa-person-chalkboard"></i>Lessons</a>
                   </li>
                   <li class="nav__item">

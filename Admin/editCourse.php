@@ -25,7 +25,7 @@ if(isset($_REQUEST['courseUpdateBtn'])){
       $course_category = $_REQUEST['course_category'];
       $course_new_price = $_REQUEST['course_new_price'];
       $course_original_price = $_REQUEST['course_original_price'];
-      $course_images = '../assets/img/courseImg/'.$_FILES['course_img']['name'];
+      $course_images = '../assets/img/courseImg/'.$_FILES['upload_file']['name'];
 
       $query = "UPDATE courses SET course_id = '$course_id' , course_name = '$course_name', course_description = '$course_description',
       course_author = '$course_author', course_duration = '$course_duration', course_category = '$course_category', course_price ='$course_new_price',
@@ -110,7 +110,7 @@ if(isset($_REQUEST['courseUpdateBtn'])){
          
             <div class="form__group form__group--md">
                <label class="form__label">Select Course Image</label>
-               <input type="file" class="" hidden="hidden" id="course_img" name='course_img'>
+               <input type="file" class="" hidden="hidden" id="upload_file" name='upload_file'>
                <div class="form__upload">
                   <label id="upload_btn" class="btn btn--sm btn--blue">Add Image</label>
                   <span class="upload__span" id="upload_text">Nie wybrano pliku</span>

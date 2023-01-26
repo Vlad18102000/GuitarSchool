@@ -578,6 +578,7 @@ body.no-scroll {
   border: 2px solid #fff;
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
+  object-fit: cover;
 }
 @media screen and (max-width: 991px) {
   .profile__avatar {
@@ -711,6 +712,10 @@ body.no-scroll {
 .btn--db {
   margin-top: 10px;
   display: block;
+}
+.btn--img {
+  display: block;
+  margin-top: 10px;
 }
 
 .nav--mobile {
@@ -1220,6 +1225,9 @@ body.no-scroll {
   text-align: center;
   margin-top: 80px;
 }
+.form__center--mt0 {
+  margin-top: 0;
+}
 
 .form__button {
   margin-right: 20px;
@@ -1238,6 +1246,61 @@ body.no-scroll {
 .form__danger {
   padding: 10px;
   color: red;
+}
+
+.cabinet_pos {
+  display: flex;
+  margin-top: 200px;
+}
+
+.cabinet {
+  display: flex;
+}
+@media screen and (max-width: 575px) {
+  .cabinet {
+    flex-direction: column;
+  }
+}
+
+.cabinet__form {
+  width: 34rem;
+}
+@media screen and (max-width: 575px) {
+  .cabinet__form {
+    order: 2;
+  }
+}
+
+.cabinet__avatar {
+  flex-grow: 1;
+  padding-left: 11rem;
+}
+@media screen and (max-width: 575px) {
+  .cabinet__avatar {
+    order: 1;
+    padding-left: 0;
+    margin-bottom: 2rem;
+  }
+}
+.cabinet__avatar img {
+  display: block;
+  margin-bottom: 1.5rem;
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.cabinet__file {
+  font-size: 1.4rem;
+  color: #3137c9;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.cabinet__file input {
+  display: none;
+}
+.cabinet__file:hover {
+  text-decoration: none;
 }
 
 .modal {
@@ -1654,6 +1717,9 @@ body.no-scroll {
   background-color: #121212;
   font-size: 18px;
   margin-bottom: 30px;
+}
+.dashboard__table-title.mt {
+  margin-top: 40px;
 }
 
 .table {
