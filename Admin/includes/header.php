@@ -69,7 +69,7 @@
                      <i class="fa-solid fa-credit-card"></i>Payment Status</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
+                     <a class="nav__link nav__link--admin" href="feedback.php">
                      <i class="fa-solid fa-message"></i>Feedback</a>
                   </li>
                   <li class="nav__item">

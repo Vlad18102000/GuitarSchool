@@ -1,3 +1,4 @@
+<!-- <?php include('./feedback.php') ?> -->
 <footer class="footer">
          <small class="footer__content">Copyright &copy; 2022 || Designed By Vladyslav Potapov ||  <a href="#login" class="footer__link" data-toggle="modal" data-modal="admin-modal">Admin Login</a></small>
    </footer>
@@ -103,23 +104,27 @@
 <!-- CONTACT FORM ТРЕБА ДОРОБЛЯТИ -->
 <div class="modal" id="contact-modal">
        <div class="modal__content modal__content--contact">
-          <form action="/" class="form ">
-             <div class="form__group form__group--md">
-                <input type="text" class="form__control" placeholder="Imię">
+          <form  class="form " method="POST" enctype="multipart/form-data">
+          <div class="form__group form__group--md">
+                <input type="hidden" class="form__control" name='student_id' id = 'student_id' value = "<?php if(isset($student_id)) {echo $student_id;} ?>">
                 <span class="form__line"></span>
              </div>
              <div class="form__group form__group--md">
-                <input type="email" class="form__control" placeholder="Email">
+                <input type="text" class="form__control" placeholder="Imię" name='student_name' value = "<?php if(isset($student_name)) {echo $student_name;} ?>">
+                <span class="form__line"></span>
+             </div>
+             <div class="form__group form__group--md">
+                <input type="email" class="form__control" placeholder="Email" name ='student_email' value = "<?php if(isset($student_email)) {echo $student_email;} ?>" >
                 <span class="form__line"></span>
              </div>
     
              <div class="form__group form__group--md">
-                <textarea class="form__control form__control--textarea" placeholder="Tekst wiadomosci" data-autoresize></textarea>
+                <textarea class="form__control form__control--textarea" placeholder="Tekst wiadomosci" name="feedback_content" id="feedback_content" data-autoresize></textarea>
                 <span class="form__line"></span>
              </div>
              <div class="form__footer">
                 <div class="form__group form__group--md">
-                   <button class="btn btn--blue btn--rounded btn--sm" type="submit">Wyślij wiadomość</button>
+                   <button class="btn btn--blue btn--rounded btn--sm" type="submit" name='feedbackBtn1' id ='feedbackBtn1'>Wyślij wiadomość</button>
                 </div>
                 <ul class="form__footer-list">
                    <li>

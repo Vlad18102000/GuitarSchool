@@ -977,6 +977,10 @@ body.no-scroll {
   }
 }
 
+.course__details-info {
+  min-width: 50%;
+}
+
 .course__details-img {
   padding-right: 30px;
 }
@@ -1755,6 +1759,15 @@ body.no-scroll {
 
 .ml-10 {
   margin-left: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+td {
+  word-wrap: break-word;
 }
 
 /*# sourceMappingURL=style.css.map */

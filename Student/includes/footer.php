@@ -1,3 +1,5 @@
+
+<?php include('studentFeedback.php'); ?>
 <footer class="footer">
          <small class="footer__content">Copyright &copy; 2022 || Designed By Vladyslav Potapov ||  <a href="#login" class="footer__link" data-toggle="modal" data-modal="admin-modal">Admin Login</a></small>
    </footer>
@@ -101,42 +103,55 @@
    </div>
 </div>
 <!-- CONTACT FORM ТРЕБА ДОРОБЛЯТИ -->
+
+
+<!-- action="studentFeedback.php" -->
+
 <div class="modal" id="contact-modal">
-       <div class="modal__content modal__content--contact">
-          <form action="/" class="form ">
-             <div class="form__group form__group--md">
-                <input type="text" class="form__control" placeholder="Imię">
-                <span class="form__line"></span>
-             </div>
-             <div class="form__group form__group--md">
-                <input type="email" class="form__control" placeholder="Email">
-                <span class="form__line"></span>
-             </div>
-    
-             <div class="form__group form__group--md">
-                <textarea class="form__control form__control--textarea" placeholder="Tekst wiadomosci" data-autoresize></textarea>
-                <span class="form__line"></span>
-             </div>
-             <div class="form__footer">
-                <div class="form__group form__group--md">
-                   <button class="btn btn--blue btn--rounded btn--sm" type="submit">Wyślij wiadomość</button>
-                </div>
-                <ul class="form__footer-list">
-                   <li>
-                      <a href="mailto:potapov@gmail.com">email:potapov@gmail.com</a>
-                   </li>
-                   <li>
-                      <a href="tel:799343433">Tel: 799-343-212</a>
-                   </li>
-                </ul>
-             </div>
-    
-          </form>
-          <button type="button" class="modal__close">
-             <img class="close-modal__img" src="../assets/img/close.svg" alt="Close">
-          </button>
-       </div>
-    </div>  
+      <div class="modal__content modal__content--contact">
+         <form  class="form " method="POST" enctype="multipart/form-data">
+         <div class="form__group form__group--md">
+               <input type="hidden" class="form__control" name='student_id' id = 'student_id' value = "<?php if(isset($student_id)) {echo $student_id;} ?>">
+               <span class="form__line"></span>
+            </div>
+            <div class="form__group form__group--md">
+               <input type="text" class="form__control" placeholder="Imię" name='student_name' id = 'student_name' value = "<?php if(isset($student_name)) {echo $student_name;}?>">
+               <span class="form__line"></span>
+            </div>
+            <div class="form__group form__group--md">
+               <input type="email" class="form__control" placeholder="Email" name = 'student_email' id = 'student_email' value = "<?php if(isset($student_email)) {echo $student_email;} ?>">
+               <span class="form__line"></span>
+            </div>
+   
+            <div class="form__group form__group--md">
+               <textarea class="form__control form__control--textarea" placeholder="Tekst wiadomosci" name="feedback_content" id="feedback_content" data-autoresize></textarea>
+               <span class="form__line"></span>
+            </div>
+            <div class="form__footer">
+               <div class="form__group form__group--md">
+                  <button class="btn btn--blue btn--rounded btn--sm" type="submit" name='feedbackBtn' id='feedbackBtn'>Wyślij wiadomość</button>
+               </div>
+               <?php
+            if(isset($message)){
+               echo $message;
+            }
+            ?>
+               <ul class="form__footer-list">
+                  <li>
+                     <a href="mailto:potapov@gmail.com">email:potapov@gmail.com</a>
+                  </li>
+                  <li>
+                     <a href="tel:799343433">Tel: 799-343-212</a>
+                  </li>
+               </ul>
+            </div>
+   
+         </form>
+         <button type="button" class="modal__close">
+            <img class="close-modal__img" src="../assets/img/close.svg" alt="Close">
+         </button>
+      </div>
+   </div>  
 
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
