@@ -103,10 +103,12 @@
 }
 .course__details-img{
    padding-right: 30px;
+   width: 100%;
    @include brakepoint($medium-bp){
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
+      margin-top: 20px;
     }
   
 }
@@ -117,7 +119,8 @@
 }
 .course__details-desc,
 .course__details-duration,
-.course__details-price{
+.course__details-price,
+.course__details-author{
    font-size: 15px;
    color: rgba($white,.55);
    margin-bottom: 2rem;
@@ -126,6 +129,20 @@
       font-size: 13px;
       margin-bottom: 1rem;
     }
+}
+.course__details-author{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   & a{
+      @include brakepoint($medium-bp){
+         padding: .9em 1.6em;
+      }
+
+   }
+    
+  
 }
 .course__photo{
    display: block;
@@ -139,6 +156,10 @@
    display: flex;
    justify-content: space-between;
    padding: 1rem 1.5rem;
+
+   &:hover{
+      background-color: $primary;
+   }
 }
 .course__lessons-title{
    font-size: 15px;
@@ -151,9 +172,11 @@
 }
 .course__lesson-link
 {
+   width: 100%;
    color: $white;
    text-decoration: none;
    font-size: 14px;
+  
 }
 .course__lesson-duration{
    color: rgba($white,.5);

@@ -450,6 +450,12 @@ body.no-scroll {
     padding-right: 1.5rem;
   }
 }
+.container--checkout {
+  margin: 0 auto;
+  max-width: 70rem;
+  background-color: rgba(32, 32, 32, 0.5);
+  padding: 20px;
+}
 .container--courses {
   max-width: 100rem;
   margin: 0 auto;
@@ -689,6 +695,11 @@ body.no-scroll {
 }
 .btn--red:hover {
   background-color: #a4190f;
+}
+.btn--center {
+  width: fit-content;
+  display: block;
+  margin: 0 auto;
 }
 .btn--blue {
   background-color: #3137c9;
@@ -983,12 +994,14 @@ body.no-scroll {
 
 .course__details-img {
   padding-right: 30px;
+  width: 100%;
 }
 @media screen and (max-width: 795px) {
   .course__details-img {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    margin-top: 20px;
   }
 }
 
@@ -1000,7 +1013,8 @@ body.no-scroll {
 
 .course__details-desc,
 .course__details-duration,
-.course__details-price {
+.course__details-price,
+.course__details-author {
   font-size: 15px;
   color: rgba(255, 255, 255, 0.55);
   margin-bottom: 2rem;
@@ -1008,9 +1022,21 @@ body.no-scroll {
 @media screen and (max-width: 795px) {
   .course__details-desc,
   .course__details-duration,
-  .course__details-price {
+  .course__details-price,
+  .course__details-author {
     font-size: 13px;
     margin-bottom: 1rem;
+  }
+}
+
+.course__details-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 795px) {
+  .course__details-author a {
+    padding: 0.9em 1.6em;
   }
 }
 
@@ -1026,6 +1052,9 @@ body.no-scroll {
   justify-content: space-between;
   padding: 1rem 1.5rem;
 }
+.course__lesson:hover {
+  background-color: #202020;
+}
 
 .course__lessons-title {
   font-size: 15px;
@@ -1039,6 +1068,7 @@ body.no-scroll {
 }
 
 .course__lesson-link {
+  width: 100%;
   color: #fff;
   text-decoration: none;
   font-size: 14px;
@@ -1506,6 +1536,12 @@ body.no-scroll {
     margin-left: 0px;
   }
 }
+.courses--checkout {
+  width: 100%;
+  margin-left: 0;
+  text-align: center;
+  margin-top: 300px;
+}
 
 .courses__nav {
   display: flex;
@@ -1768,6 +1804,82 @@ table {
 
 td {
   word-wrap: break-word;
+}
+
+.login_or_signup {
+  background-color: #121212;
+  padding: 20px;
+}
+
+.checkout_btns {
+  margin-top: 50px;
+}
+.checkout_btns .ml-40 {
+  margin-left: 40px;
+}
+
+.checkout__title {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+  padding-top: 50px;
+}
+
+.checkout__form--group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.checkout {
+  max-width: 100%;
+  margin-top: 150px;
+}
+
+.checkout__label {
+  font-size: 15px;
+  width: 30%;
+}
+
+.checkout__input {
+  width: 70%;
+  background-color: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 15px;
+  margin-left: 130px;
+}
+.checkout__input:focus {
+  border: 1px solid rgba(0, 123, 255, 0.6);
+  box-shadow: 0 0 7px rgba(0, 123, 255, 0.6);
+}
+
+.checkout__center {
+  margin: 0 auto;
+}
+
+.checkout__info {
+  position: relative;
+}
+
+.success {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.success__img {
+  font-size: 150px;
+  color: rgb(8, 198, 8);
+}
+
+.video__area {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  margin-bottom: 40px;
 }
 
 /*# sourceMappingURL=style.css.map */

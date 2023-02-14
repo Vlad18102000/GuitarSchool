@@ -13,14 +13,15 @@
             $row = $answer->fetch_assoc();
             //$course_date = $row['course_date'];
              $course_price = $row['course_price'];
+             $course_original_price = $row['course_original_price'];
              $course_img  = substr( $row['course_img'], 1);
             $course_date_new = date('d.m.Y', strtotime($row['course_data']));
             if($course_price == 0){
-               $course_price = "";
+               $course_price = $course_original_price;
 
-               $div = ''.$row['course_original_price'].' '.$course_price.' $';
+               $div = ''.$course_price.' $';
             }else{
-               $div = '<del>'.$row['course_original_price'].'</del> '.$course_price.'';
+               $div = '<del>'.$row['course_original_price'].'$</del> '.$course_price.'$';
             }
          }
       ?>
@@ -58,7 +59,8 @@
                   <div>
                      <?php echo $div  ?>
                   </div>
-                  <input type="hidden" name="id" value="'$row['course_price']'">
+                  <input type="hidden" name="course_id" value="<?php echo $course_id ?>">
+                  <input type="hidden" name="id" value="<?php echo $course_price ?>">
                   <button class = "btn btn--blue  btn--rounded" type='submit' name='buy'>Buy</button>
                </form>
             </div>
@@ -79,7 +81,7 @@
                         $num++;
                         echo '<div class="course__lesson">
                                  <a href="#" class="course__lesson-link">'.$num.'. '.$row['lesson_name'].'</a>
-                                 <a href="#" class="course__lesson-duration"> 20:21</a>
+                                 <a href="#" class="course__lesson-duration">'.$row['lesson_duration'].'</a>
                               </div>';
                      }
                   
@@ -87,36 +89,6 @@
                }
               
             ?>
-              
-               <!-- <div class="course__lesson">
-                  <a href="#" class="course__lesson-link">2. Choosing an Acoustic Guitar</a>
-                  <a href="#" class="course__lesson-duration"> 20:21</a>
-               </div>
-               <div class="course__lesson">
-                  <a href="#" class="course__lesson-link">3. Choosing an Acoustic Guitar</a>
-                  <a href="#" class="course__lesson-duration"> 20:21</a>
-               </div>
-               <div class="course__lesson">
-                  <a href="#" class="course__lesson-link">4. Choosing an Acoustic Guitar</a>
-                  <a href="#" class="course__lesson-duration"> 20:21</a>
-               </div>
-               <div class="course__lesson">
-                  <a href="#" class="course__lesson-link">5. Choosing an Acoustic Guitar</a>
-                  <a href="#" class="course__lesson-duration"> 20:21</a>
-               </div>
-               <div class="course__lesson">
-                  <a href="#" class="course__lesson-link">6. Choosing an Acoustic Guitar</a>
-                  <a href="#" class="course__lesson-duration"> 20:21</a>
-               </div>
-               <div class="course__lesson">
-                  <a href="#" class="course__lesson-link">7. Choosing an Acoustic Guitar</a>
-                  <a href="#" class="course__lesson-duration"> 20:21</a>
-               </div>
-               <div class="course__lesson">
-                  <a href="#" class="course__lesson-link">8. Choosing an Acoustic Guitar</a>
-                  <a href="#" class="course__lesson-duration"> 20:21</a>
-               </div>
-            </div> -->
          </div>
       </article>
    </div>

@@ -8,6 +8,12 @@
       padding-left: 1.5rem;
       padding-right: 1.5rem;
    }
+   &--checkout{
+      margin: 0 auto;
+      max-width: 70rem ;
+      background-color: rgba($primary,.5);
+      padding: 20px;
+   }
 
    &--courses{
       max-width: 100rem;

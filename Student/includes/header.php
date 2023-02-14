@@ -114,7 +114,7 @@ if(isset($studentLoginEmail)){
           
             <div class="sidebar__footer" >
                <a class="btn btn--red" href="../logout.php">Logout</a>
-               <button class="btn btn--blue" type="button" data-modal="contact-modal">Moje Kursy</button>
+               <a class="btn btn--blue"  href='myCourse.php'>Moje Kursy</a>
             </div>
          
             <nav class="nav nav--mobile">
