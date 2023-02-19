@@ -63,7 +63,7 @@
             ';
          }else{
             echo '
-               <div>FAIL</div>
+               <div>ERROR</div>
             ';
          }
       }

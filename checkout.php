@@ -63,8 +63,11 @@ if(!isset($_SESSION['studentLoginEmail'])){
                         <div class = 'container'>
                            <div class = 'login_or_signup'>
                               <h1 class='checkout__title'>
-                                 You have this course
+                                 You have already subscribed to this course
                               </h1>
+                              <a href='index.php' class='modal__close'>
+                                 <img class='close-modal__img' src='./assets/img/close.svg' alt='Close'>
+                              </a>
                            </div>
                         </div>
                      </div>";
@@ -97,7 +100,7 @@ if(!isset($_SESSION['studentLoginEmail'])){
                <input title="TXN_AMOUNT" class="checkout__input" tabindex="10" type="text" name="TXN_AMOUNT" value="<?php if(isset($_POST['id'])){echo $_POST['id']; }?> PLN" readonly>
             </div>
             <div class="checkout__center">
-            <!-- Set up a container element for the button -->
+            
                <div id="paypal-button-container"></div>
                <a href="./courses.php" class="btn btn--red btn--center">Cancel</a>
             </div>

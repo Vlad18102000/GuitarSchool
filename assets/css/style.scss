@@ -30,7 +30,9 @@ body {
 *::before{
     box-sizing: border-box;
 }
-
+.red{
+    color: red !important;
+}
 
 
 
@@ -53,7 +55,7 @@ body {
 // @import "blocks/related.scss";
 // @import "blocks/comments.scss";
 @import "blocks/form.scss";
-// @import "blocks/work.scss";
+
 @import "blocks/cabinet.scss";
 @import "blocks/modal.scss";
 @import "blocks/burger.scss";
@@ -63,3 +65,4 @@ body {
 @import "blocks/table.scss";
 @import "blocks/checkout.scss";
 @import "blocks/videoArea.scss";
+@import "blocks/post.scss";

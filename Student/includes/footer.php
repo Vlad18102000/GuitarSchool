@@ -1,9 +1,27 @@
 
 <?php include('studentFeedback.php'); ?>
-<footer class="footer">
+
+
+
+<?php 
+                 if(isset($_SESSION['student_has_logged'])){
+
+                  echo '
+                  <footer></footer>
+                  ';
+                 }else{
+                  echo '
+                  
+                  <footer class="footer">
+                     <small class="footer__content">Copyright &copy; 2022 || Designed By Vladyslav Potapov ||  <a href="#login" class="footer__link" data-toggle="modal" data-modal="admin-modal">Admin Login</a></small>
+                  </footer>
+                  ';
+                 }
+                 ?> 
+<!-- <footer class="footer">
          <small class="footer__content">Copyright &copy; 2022 || Designed By Vladyslav Potapov ||  <a href="#login" class="footer__link" data-toggle="modal" data-modal="admin-modal">Admin Login</a></small>
    </footer>
-</div> <!-- End Page div -->
+</div>  -->
 
 
 <!-- MODAL STUDENT LOGIN -->

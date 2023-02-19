@@ -49,18 +49,16 @@ if(isset($studentLoginEmail)){
             <nav class="nav">
                <ul class="nav__list">
                   <li class="nav__item">
-                     <a class="nav__link" href="index.php">Strona główna</a>
+                     <a class="nav__link" href="index.php">Home</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link" href="courses.php">Kursy</a>
+                     <a class="nav__link" href="courses.php">Courses</a>
                   </li>
                   <li class="nav__item">
                      <a class="nav__link" href="#">Payment Status</a>
                   </li>
                
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Feedback</a>
-                  </li>
+                
                   <li class="nav__item">
                      <a class="nav__link" href="#" data-modal="contact-modal">Contact</a>
                   </li>
@@ -96,8 +94,8 @@ if(isset($studentLoginEmail)){
                   
                </ul>
             </nav>
-            <form class="search" action="/" method="post">
-               <input class="search__input" type="text" placeholder="Szukaj w serwisie...">
+            <form class="search" action="search.php" method="GET">
+               <input class="search__input" type="text" name="term" placeholder="Search course...">
             </form>
          </div>
       </header>
@@ -189,31 +187,27 @@ if(isset($studentLoginEmail)){
             <nav class="nav nav--mobile">
                <ul class="nav__list">
                   <li class="nav__item">
-                     <a class="nav__link" href="index.php">Strona główna</a>
+                     <a class="nav__link" href="index.php">Home</a>
+                  </li>
+                  <li class="nav__item">
+                     <a class="nav__link" href="courses.php">Courses</a>
                   </li>
                   <li class="nav__item">
                      <a class="nav__link" href="#">Payment Status</a>
                   </li>
+             
                   <li class="nav__item">
-                     <a class="nav__link" href="#">Feedback</a>
+                     <a class="nav__link" href="#" data-modal="contact-modal">Contact</a>
                   </li>
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Contact</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Profile</a>
-                  </li>
-                  <!-- <li class="nav__item">
-                     <a class="nav__link" href="#">Profile</a>
-                  </li> -->
+                 <?php 
+                 if(isset($_SESSION['student_has_logged'])){
+
+                  echo '<li class="nav__item">
+                           <a class="nav__link" href="Student/profile.php">Profile</a>
+                        </li>';
+                 }
+                 ?> 
+               
                </ul>
-               <!-- 
-               <div class="sidebar__footer">
-                  <a class="btn btn--red" href="works.html">Login</a>
-                  <button class="btn btn--blue" type="button" data-modal="contact-modal">SignUp</button>
-               </div> -->
-            </nav>
-         
-     
-         
+            </nav>  
       </aside>

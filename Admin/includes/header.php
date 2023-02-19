@@ -61,12 +61,12 @@
                      <i class="fa-solid fa-people-group"></i>Students</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
+                     <a class="nav__link nav__link--admin" href="report.php">
                      <i class="fa-solid fa-table"></i>Report</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link nav__link--admin" href="#">
-                     <i class="fa-solid fa-credit-card"></i>Payment Status</a>
+                     <a class="nav__link nav__link--admin" href="posts.php">
+                     <i class="fa-solid fa-pen-to-square"></i>Posts</a>
                   </li>
                   <li class="nav__item">
                      <a class="nav__link nav__link--admin" href="feedback.php">
@@ -81,38 +81,49 @@
             </nav>
          </div>
           
-      <div class="sidebar__footer sidebar__footer--admin" >
-         <a class="btn btn--red" href="../logout.php">Logout</a>
-      </div>
+     
          
 
             <nav class="nav nav--mobile">
-               <ul class="nav__list">
-                  <li class="nav__item">
-                     <a class="nav__link" href="index.php">Strona główna</a>
+               <ul class="nav__list nav__list--admin">
+               <li class="nav__item nav__item--admin">
+                     <a class="nav__link nav__link--admin" href="dashboard.php">
+                        <i class="fa-solid fa-gauge"></i>Dashboard
+                     </a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link" href="#">Payment Status</a>
+                     <a class="nav__link nav__link--admin" href="courses.php">
+                     <i class="fa-regular fa-compass"></i> Courses</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link" href="#">Feedback</a>
+                     <a class="nav__link nav__link--admin" href="lessons.php">
+                     <i class="fa-solid fa-person-chalkboard"></i>Lessons</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link" href="#">Contact</a>
+                     <a class="nav__link nav__link--admin" href="students.php">
+                     <i class="fa-solid fa-people-group"></i>Students</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link" href="#">Profile</a>
+                     <a class="nav__link nav__link--admin" href="report.php">
+                     <i class="fa-solid fa-table"></i>Report</a>
                   </li>
-                  <!-- <li class="nav__item">
-                     <a class="nav__link" href="#">Profile</a>
-                  </li> -->
+                  <li class="nav__item">
+                     <a class="nav__link nav__link--admin" href="#">
+                     <i class="fa-solid fa-credit-card"></i>Payment Status</a>
+                  </li>
+                  <li class="nav__item">
+                     <a class="nav__link nav__link--admin" href="feedback.php">
+                     <i class="fa-solid fa-message"></i>Feedback</a>
+                  </li>
+                  <li class="nav__item">
+                     <a class="nav__link nav__link--admin" href="changePassword.php">
+                     <i class="fa-solid fa-lock"></i>Change Password</a>
+                  </li>
                </ul>
-               <!-- 
-               <div class="sidebar__footer">
-                  <a class="btn btn--red" href="works.html">Login</a>
-                  <button class="btn btn--blue" type="button" data-modal="contact-modal">SignUp</button>
-               </div> -->
             </nav>
+            <div class="sidebar__footer sidebar__footer--admin" >
+         <a class="btn btn--red" href="../logout.php">Logout</a>
+      </div>
          
      
          

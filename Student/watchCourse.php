@@ -26,7 +26,7 @@ if(isset($_SESSION['student_has_logged'])){
       <article class="course__details">
          <div class="course__actions">
             <i class="fa-solid fa-hand-point-left"></i>
-            <a href="courses.php">Back</a>
+            <a href="../index.php">Back</a>
          </div>
          <div class="course__header ">
             <h2 class="course__details-title ">
@@ -43,6 +43,9 @@ if(isset($_SESSION['student_has_logged'])){
          </div>
          <div class="course__video">
             <video id="videoarea" class="video__area" src="" controls></video>
+            <div class="video__name">
+               <h1 class="video__title" id ="videoname"></h1>
+            </div>
          </div>
          <div class="course__lessons">
             <div class="course__lessons-title">
@@ -59,7 +62,7 @@ if(isset($_SESSION['student_has_logged'])){
                      if($course_id == $row['course_id']){
                         $num++;
                         echo '<div class="course__lesson" id="playlist">
-                                 <a  class="course__lesson-link" movieurl="'.$row['lesson_link'].'">'.$num.'. '.$row['lesson_name'].'</a>
+                                 <a  class="course__lesson-link" movieurl="'.$row['lesson_link'].'" id="lesson_name" value="'.$row['lesson_name'].'">'.$num.'. '.$row['lesson_name'].'</a>
                                  <a  class="course__lesson-duration">'.$row['lesson_duration'].'</a>
                               </div>';
                      }

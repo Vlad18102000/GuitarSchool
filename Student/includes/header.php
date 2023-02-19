@@ -50,17 +50,13 @@ if(isset($studentLoginEmail)){
             <nav class="nav">
                <ul class="nav__list">
                   <li class="nav__item">
-                     <a class="nav__link" href="../index.php">Strona główna</a>
+                     <a class="nav__link" href="../index.php">Home</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link" href="../courses.php">Kursy</a>
+                     <a class="nav__link" href="../courses.php">Courses</a>
                   </li>
                   <li class="nav__item">
                      <a class="nav__link" href="#">Payment Status</a>
-                  </li>
-               
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Feedback</a>
                   </li>
                   <li class="nav__item">
                      <a class="nav__link" href="#" data-modal="contact-modal">Contact</a>
@@ -82,8 +78,8 @@ if(isset($studentLoginEmail)){
                         </li>
                </ul>
             </nav>
-            <form class="search" action="/" method="post">
-               <input class="search__input" type="text" placeholder="Szukaj w serwisie...">
+            <form class="search" action="../search.php" method="GET">
+               <input class="search__input" type="text" name="term" placeholder="Szukaj w serwisie...">
             </form>
          </div>
       </header>
@@ -120,19 +116,20 @@ if(isset($studentLoginEmail)){
             <nav class="nav nav--mobile">
                <ul class="nav__list">
                   <li class="nav__item">
-                     <a class="nav__link" href="index.php">Strona główna</a>
+                     <a class="nav__link" href="../index.php">Strona główna</a>
+                  </li>
+                  <li class="nav__item">
+                     <a class="nav__link" href="../courses.php">Kursy</a>
                   </li>
                   <li class="nav__item">
                      <a class="nav__link" href="#">Payment Status</a>
                   </li>
+               
                   <li class="nav__item">
-                     <a class="nav__link" href="#">Feedback</a>
+                     <a class="nav__link" href="#" data-modal="contact-modal">Contact</a>
                   </li>
                   <li class="nav__item">
-                     <a class="nav__link" href="#">Contact</a>
-                  </li>
-                  <li class="nav__item">
-                     <a class="nav__link" href="#">Profile</a>
+                     <a class="nav__link" href="profile.php">Profile</a>
                   </li>
                   <!-- <li class="nav__item">
                      <a class="nav__link" href="#">Profile</a>

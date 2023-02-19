@@ -40,13 +40,15 @@
    padding: 0 2rem;
    margin-top: -5rem;
    @include brakepoint($tablet-bp){
-      flex-grow: 1;
+      margin-left: 10px;
    }
 
    &--admin{
       margin-top: 0;
       border-bottom: 1px solid rgba($white, .1);
       padding-bottom: 1S0px;
+
+   
    }
 }
 .sidebar__footer{
@@ -56,6 +58,14 @@
 
    &--admin{
       margin-top: 20px;
+
+      @include brakepoint($tablet-bp){
+         margin-top: 0px;
+       }
+   }
+
+   @include brakepoint($tablet-bp){
+     margin-top: 20px;
    }
 }
 .profile__logoname{

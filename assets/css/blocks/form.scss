@@ -4,6 +4,10 @@
       max-width: 280px;
       margin: 0 auto;
    }
+   &--date{
+      text-align: center;
+      
+   }
 }
 .form__group{
    margin-bottom: 1.5rem;
@@ -108,6 +112,10 @@
       margin-top: 0;
    }
 
+   &--mt50{
+      margin-top: 50px;
+   }
+
 }
 .form__button{
    margin-right: 20px;
@@ -124,21 +132,18 @@
    padding: 10px;
    color: red;
 }
+.form__date{
+   margin-right: 50px;
+   width: 200px;
+   text-align: center;
+   background-color: #3f3f3f;
+   border: none;
+   color: $white;
+   padding: 10px;
 
-// .sign__in-form{
-//    width: 100%;
-//    margin: 0;
-//    position: absolute;
-//    top: 50%;
-//    left: 50%;
-//    margin-right: -50%;
-//    transform: translate(-50%, -50%); 
-// }
-// .sign__in-content{
-//    margin: 0;
-//    position: absolute;
-//    top: 50%;
-//    left: 50%;
-//    margin-right: -50%;
-//    transform: translate(-50%, -50%); 
-// }
+  
+}
+
+::-webkit-calendar-picker-indicator {
+   filter: invert(1);
+}

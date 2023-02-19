@@ -7,10 +7,6 @@ if(!isset($_SESSION)){
 include_once("includes/header.php");
 include_once("../configDb.php");
 
-
-
-
-
 if(isset($_SESSION['admin_has_logged'])){
    $adminEmail = $_SESSION['adminEmail'];
 }else{
