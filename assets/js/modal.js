@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
    const closeModal = document.querySelectorAll('.modal__close');
    const modal = document.querySelectorAll('.modal');
 
+   
+
    modalBtn.forEach(item => {
 
       item.addEventListener('click', event => {

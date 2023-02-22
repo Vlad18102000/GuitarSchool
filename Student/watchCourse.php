@@ -42,7 +42,7 @@ if(isset($_SESSION['student_has_logged'])){
             </ul>
          </div>
          <div class="course__video">
-            <video id="videoarea" class="video__area" src="" controls></video>
+            <video id="videoarea" class="video__area" src="" value controls onended ="endedVideo()"></video>
             <div class="video__name">
                <h1 class="video__title" id ="videoname"></h1>
             </div>

@@ -134,3 +134,35 @@
 .course__hide{
    display: none;
 }
+.course__progress{
+   accent-color: $blue;
+   display: block;
+   border: none;
+   margin-bottom: 5px;
+}
+progress::-webkit-progress-bar{
+   border-radius: 5px;
+   background-color: $black;
+}
+progress::-webkit-progress-value{
+   border-radius: 5px;
+   background-color: $blue;
+}
+progress::-moz-progress-bar{
+   border-radius: 5px;
+   background-color: $black;
+}
+.progress__span{
+   font-size: 13px;
+   margin-top: 10px;
+}
+.progress_label{
+   display: block;
+   font-size: 14px;
+   margin-bottom: 4px;
+}
+.progress__container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}

@@ -180,6 +180,8 @@
 <script src="../assets/js/filter.js" ></script>
 <script src="../assets/js/ajaxAdmin.js" ></script>
 <script src="../assets/js/ajaxStudent.js" ></script>
+<script src="../assets/js/progress.js" ></script>
+<script src="../assets/js/progressBtn.js" ></script>
 
 </body>
 </html>

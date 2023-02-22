@@ -63,5 +63,11 @@
    &--print{
       margin-top: 20px;
    }
+   &--input{
+      //object-fit: cover;
+      width: 100px;
+      max-width: 100%;
+   }
+
 
 }

@@ -745,6 +745,10 @@ body.no-scroll {
 .btn--print {
   margin-top: 20px;
 }
+.btn--input {
+  width: 100px;
+  max-width: 100%;
+}
 
 .nav--mobile {
   display: none;
@@ -1707,6 +1711,45 @@ body.no-scroll {
 
 .course__hide {
   display: none;
+}
+
+.course__progress {
+  accent-color: #3137c9;
+  display: block;
+  border: none;
+  margin-bottom: 5px;
+}
+
+progress::-webkit-progress-bar {
+  border-radius: 5px;
+  background-color: #000;
+}
+
+progress::-webkit-progress-value {
+  border-radius: 5px;
+  background-color: #3137c9;
+}
+
+progress::-moz-progress-bar {
+  border-radius: 5px;
+  background-color: #000;
+}
+
+.progress__span {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.progress_label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.progress__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .admin__area {

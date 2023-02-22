@@ -21,13 +21,13 @@ if(isset($_SESSION['student_has_logged'])){
          course.course_author, course.course_img, course.course_category, course.course_data FROM courseorder AS orders JOIN courses AS course ON course.course_id = orders.course_id
          WHERE orders.student_email = '$student_email'";
          $answer = $con->query($query);
-         
+
          if($answer->num_rows > 0){
             while($row = $answer->fetch_assoc()){
                $course_date_new = date('d.m.Y', strtotime($row['course_data']));
-               
+               $course_id = $row['course_id'];
                echo '
-               <article class="course__details">
+               <article class="course__details" value="'.$course_id.'">
                <div class="course__header">
                   <div class="course__details-title">
                      '.$row['course_name'].'
@@ -61,15 +61,55 @@ if(isset($_SESSION['student_has_logged'])){
                       
                      </div>
                   </div>
-               </div>
-            </article>
+               </div> ';
+               ?>
                
-               ';
+               <?php 
+
+                  $sql = "SELECT DISTINCT lesson.course_id ,lesson.course_name,progres.status ,progres.lesson_name, progres.course_id From lessons As lesson JOIN progress AS progres ON progres.course_id = lesson.course_id
+                  WHERE progres.student_email = '$student_email' AND progres.status = 'Finished' AND progres.course_id = '$course_id'";
+                  $result = $con->query($sql);
+      
+                  $sql_2 = "SELECT * FROM lessons WHERE course_id = '$course_id'";
+                  $result_2 = $con->query($sql_2);
+                  $count_lessons = $result_2->num_rows;
+                  $num = 0;
+                  if($result->num_rows > 0 ){
+                     //$num = 0;
+
+                     while($row = $result->fetch_assoc()){
+                        $lesson_name = $row['lesson_name'];
+                        $course_id = $row['course_id'];
+                        $course_name = $row['course_name'];
+                        $num++;
+                        
+                     }
+                  }
+                  if($count_lessons != 0){
+                     $progress = ($num * 100) / $count_lessons;
+                  }else{
+                     $progress = 0;
+                     
+                  }
+                  
+                  $num = 0;
+                  
+               echo '<form class = "progress__container" method="POST" action="generateCertyficate.php">
+                        <div>
+                           <input type="hidden" class="form__control" id="course_id" name="course_id" value="'.$course_id.'" readonly>
+                           <label class = "progress_label" for="progress">Progress:</label>
+                           <progress class="course__progress" id="progress" max="100" value="'.$progress.'"> % </progress>
+                           <span class ="progress__span">'.$progress.'% complete</span>
+                        </div>
+                       
+                     </form>';
+               ?>
+               <?php
+            echo '</article>';
             }
          }
       }
-   ?>
-
+      ?>
 </div>
 </div>
 

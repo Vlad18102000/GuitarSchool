@@ -7,6 +7,8 @@ ffmpeg
 .pnp.js
 img
 video
+fpdf
+generateCertyficate.php
 
 # testing
 /coverage

@@ -31,6 +31,14 @@
          $order_id = $_POST['ORDER_ID'];
          $student_email = $_SESSION['studentLoginEmail'];
          $course_id = $_SESSION['course_id'];
+
+         $query = "SELECT * FROM students WHERE student_email = '$student_email'";
+         $answer = $con->query($query);
+         $row = $answer->fetch_assoc();
+         $student_name = $row['student_name'];
+
+
+
          $status = "Success";
          $respmsg = "Done";
          $price = $_POST['TXN_AMOUNT'];
@@ -41,7 +49,7 @@
          // $row = $answer->fetch_assoc();
 
         
-            $query = "INSERT INTO courseorder(order_id,student_email,course_id,status,respmsg,amount,order_date) VALUES('$order_id','$student_email','$course_id','$status','$respmsg','$price','$order_date')";
+            $query = "INSERT INTO courseorder(order_id,student_email,student_name,course_id,status,respmsg,amount,order_date) VALUES('$order_id','$student_email','$student_name','$course_id','$status','$respmsg','$price','$order_date')";
          
          
          if($con->query($query) == true){
