@@ -2,6 +2,7 @@
 include('configDb.php');
 session_start();
 
+
 if(!isset($_SESSION['studentLoginEmail'])){
    include_once('checkoutLogin.php');
    echo "

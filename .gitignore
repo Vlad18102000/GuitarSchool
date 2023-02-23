@@ -9,7 +9,9 @@ img
 video
 fpdf
 generateCertyficate.php
-
+package.json
+package-lock.json
+customfont
 # testing
 /coverage
 
