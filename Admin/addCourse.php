@@ -11,34 +11,36 @@ if(isset($_SESSION['admin_has_logged'])){
    echo "<script>location.href='../index.php';</script>";
 }
 
+function addCourse($con) {
+   $course_name = $_REQUEST['course_name'];
+   $course_description = $_REQUEST['course_description'];
+   $course_author = $_REQUEST['course_author'];
+   $course_duration = $_REQUEST['course_duration'];
+   $course_category = $_REQUEST['course_category'];
+   $course_new_price = $_REQUEST['course_new_price'];
+   $course_original_price = $_REQUEST['course_original_price'];
+   $course_img = $_FILES['upload_file']['name'];
+   $course_img_temp = $_FILES['upload_file']['tmp_name'];
+   $img_folder = '../assets/img/courseImg/'.$course_img;
+   move_uploaded_file($course_img_temp, $img_folder);
+
+   $query = "INSERT INTO courses (course_name, course_description, course_author, course_duration, course_img,course_price,course_original_price,course_category)
+   VALUES ('$course_name', '$course_description', '$course_author', '$course_duration','$img_folder','$course_new_price','$course_original_price','$course_category')";
+
+   if($con->query($query) == TRUE){
+       return "<div class='modal__span-success'>*Course Added Successfully!</div>";
+   }else{
+       return "<div class='form__danger'>*Error Adding Course!</div>";
+   }
+}
+
 if(isset($_REQUEST['courseSubmitBtn'])){
 
    if(($_REQUEST['course_name'] == "") || ($_REQUEST['course_description'] == "") || ($_REQUEST['course_author'] == "") 
    || ($_REQUEST['course_duration'] == "") ||  ($_REQUEST['course_original_price'] == "")) {
       $message = "<div class='form__danger'>*Fill All Fields!</div>";
-      // ($_REQUEST['course_price'] == "") ||
    } else{
-      $course_name = $_REQUEST['course_name'];
-      $course_description = $_REQUEST['course_description'];
-      $course_author = $_REQUEST['course_author'];
-      $course_duration = $_REQUEST['course_duration'];
-      $course_category = $_REQUEST['course_category'];
-      $course_new_price = $_REQUEST['course_new_price'];
-      $course_original_price = $_REQUEST['course_original_price'];
-      $course_img = $_FILES['upload_file']['name'];
-      $course_img_temp = $_FILES['upload_file']['tmp_name'];
-      $img_folder = '../assets/img/courseImg/'.$course_img;
-      move_uploaded_file($course_img_temp, $img_folder);
-
-      $query = "INSERT INTO courses (course_name, course_description, course_author, course_duration, course_img,course_price,course_original_price,course_category)
-      VALUES ('$course_name', '$course_description', '$course_author', '$course_duration','$img_folder','$course_new_price','$course_original_price','$course_category')";
-
-      if($con->query($query) == TRUE){
-         $message = "<div class='modal__span-success'>*Course Added Succesfully!</div>";
-      }else{
-         $message = "<div class='form__danger'>*Error Adding Course!</div>";
-      }
-
+      $message = addCourse($con);
    }
 
 }

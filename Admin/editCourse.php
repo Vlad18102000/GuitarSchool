@@ -11,34 +11,36 @@ if(isset($_SESSION['admin_has_logged'])){
    echo "<script>location.href='../index.php';</script>";
 }
 
+function updateCourse($con) {
+   $course_id = $_REQUEST['course_id'];
+   $course_name = $_REQUEST['course_name'];
+   $course_description = $_REQUEST['course_description'];
+   $course_author = $_REQUEST['course_author'];
+   $course_duration = $_REQUEST['course_duration'];
+   $course_category = $_REQUEST['course_category'];
+   $course_new_price = $_REQUEST['course_new_price'];
+   $course_original_price = $_REQUEST['course_original_price'];
+   $course_images = '../assets/img/courseImg/'.$_FILES['upload_file']['name'];
+
+   $query = "UPDATE courses SET course_id = '$course_id' , course_name = '$course_name', course_description = '$course_description',
+   course_author = '$course_author', course_duration = '$course_duration', course_category = '$course_category', course_price ='$course_new_price',
+   course_original_price = '$course_original_price', course_img = '$course_images' WHERE course_id = '$course_id'";
+
+   if($con->query($query) == true){
+      return $message = "<div class='modal__span-success'>*Course Updated Succesfully!</div>";
+   }else{
+      return $message = "<div class='modal__span-success'>*Course update failed!</div>";
+   }
+}
 
 if(isset($_REQUEST['courseUpdateBtn'])){
    if(($_REQUEST['course_name'] == "") || ($_REQUEST['course_description'] == "") || ($_REQUEST['course_author'] == "") 
    || ($_REQUEST['course_duration'] == "") ||  ($_REQUEST['course_original_price'] == "")) {
       $message = "<div class='form__danger'>*Fill All Fields!</div>";
    } else{
-      $course_id = $_REQUEST['course_id'];
-      $course_name = $_REQUEST['course_name'];
-      $course_description = $_REQUEST['course_description'];
-      $course_author = $_REQUEST['course_author'];
-      $course_duration = $_REQUEST['course_duration'];
-      $course_category = $_REQUEST['course_category'];
-      $course_new_price = $_REQUEST['course_new_price'];
-      $course_original_price = $_REQUEST['course_original_price'];
-      $course_images = '../assets/img/courseImg/'.$_FILES['upload_file']['name'];
-
-      $query = "UPDATE courses SET course_id = '$course_id' , course_name = '$course_name', course_description = '$course_description',
-      course_author = '$course_author', course_duration = '$course_duration', course_category = '$course_category', course_price ='$course_new_price',
-      course_original_price = '$course_original_price', course_img = '$course_images' WHERE course_id = '$course_id'";
-
-      if($con->query($query) == true){
-         $message = "<div class='modal__span-success'>*Course Updated Succesfully!</div>";
-      }else{
-         $message = "<div class='modal__span-success'>*Course update failed!</div>";
-      }
+     $message = updateCourse($con);
    }
 }
-
 
 ?>
 

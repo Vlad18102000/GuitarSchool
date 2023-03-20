@@ -91,6 +91,57 @@
             ?>
          </div>
       </article>
+      
+      <form class="form" action="addComment.php" method="post">
+      <input type="hidden" class="form__control" id="course_id" name="course_id" value="'.$course_id.'" readonly>
+         <div class="form__group">
+            <textarea class="form__control form__control--textarea" name="comment-text" placeholder="Napisz komentarz"
+               data-autoresize></textarea>
+            <span class="form__line"></span>
+         </div>
+
+         <button class="btn btn--blue btn--rounded btn--sm" type="submit">Wyślij komentarz</button>
+      </form>
+
+      <ul class="comments">
+         <li class="comments__item">
+            <div class="comments__header">
+               <img class="comments__avatar" src="https://via.placeholder.com/40" alt="">
+               <div class="comments__author">
+                  <div class="comments__name">Vladyslav Potapov</div>
+                  <time class="comments__pubdate" datetime="2022-11-12"> 1 week ago</time>
+               </div>
+            </div>
+
+            <div class="comments__text">
+               Lorem ipsum dolor sit, amet consectetur adipisicing elit. A atque aspernatur officiis perspiciatis,
+               libero blanditiis itaque voluptatibus natus porro esse aliquid impedit ipsum similique.
+               Quae quidem debitis esse doloribus dolores?
+
+            </div>
+            <button class="comments__reply" type="button">Odpowiedz</button>
+         </li>
+         <ul class="comments">
+            <li class="comments__item">
+               <div class="comments__header">
+                  <img class="comments__avatar" src="https://via.placeholder.com/40" alt="">
+                  <div class="comments__author">
+                     <div class="comments__name">Vladyslav Potapov</div>
+                     <time class="comments__pubdate" datetime="2022-11-12"> 1 week ago</time>
+                  </div>
+               </div>
+
+               <div class="comments__text">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. A atque aspernatur officiis perspiciatis,
+                  libero blanditiis itaque voluptatibus natus porro esse aliquid impedit ipsum similique.
+                  Quae quidem debitis esse doloribus dolores?
+
+               </div>
+               <button class="comments__reply" type="button">Odpowiedz</button>
+            </li>
+         </ul>
+      </ul>
+
    </div>
 </div>
 <?php

@@ -28,7 +28,7 @@
          </div>
          <div class="header__right">
             <form class="search" action="/" method="post">
-               <input class="search__input" type="text" placeholder="Szukaj w serwisie...">
+               
             </form>
          </div>
       </header>
@@ -59,6 +59,10 @@
                   <li class="nav__item">
                      <a class="nav__link nav__link--admin" href="students.php">
                      <i class="fa-solid fa-people-group"></i>Students</a>
+                  </li>
+                  <li class="nav__item">
+                     <a class="nav__link nav__link--admin" href="studentResult.php">
+                     <i class="fa-solid fa-square-poll-horizontal"></i>Student Results</a>
                   </li>
                   <li class="nav__item">
                      <a class="nav__link nav__link--admin" href="report.php">
@@ -102,6 +106,10 @@
                   <li class="nav__item">
                      <a class="nav__link nav__link--admin" href="students.php">
                      <i class="fa-solid fa-people-group"></i>Students</a>
+                  </li>
+                  <li class="nav__item">
+                     <a class="nav__link nav__link--admin" href="students.php">
+                     <i class="fa-solid fa-people-group"></i>Student Results</a>
                   </li>
                   <li class="nav__item">
                      <a class="nav__link nav__link--admin" href="report.php">

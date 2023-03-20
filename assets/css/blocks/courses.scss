@@ -139,6 +139,10 @@
    display: block;
    border: none;
    margin-bottom: 5px;
+
+   &--admin{
+      margin-bottom: 0;
+   }
 }
 progress::-webkit-progress-bar{
    border-radius: 5px;
@@ -155,6 +159,11 @@ progress::-moz-progress-bar{
 .progress__span{
    font-size: 13px;
    margin-top: 10px;
+
+   &--admin{
+      text-align: center;
+   }
+  
 }
 .progress_label{
    display: block;

@@ -5,16 +5,18 @@
 ffmpeg
 /.pnp
 .pnp.js
-img
+
 video
 fpdf
-generateCertyficate.php
+
 package.json
 package-lock.json
 customfont
+vendor
+composer.json
+composer.lock
 # testing
 /coverage
-
 # production
 /build
 

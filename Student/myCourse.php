@@ -87,8 +87,12 @@ if(isset($_SESSION['student_has_logged'])){
                   }
                   if($count_lessons != 0){
                      $progress = ($num * 100) / $count_lessons;
+
+                     $progress_round = round($progress);
+                     
                   }else{
-                     $progress = 0;
+                     
+                     $progress_round = 0;
                      
                   }
                   
@@ -98,8 +102,8 @@ if(isset($_SESSION['student_has_logged'])){
                         <div>
                            <input type="hidden" class="form__control" id="course_id" name="course_id" value="'.$course_id.'" readonly>
                            <label class = "progress_label" for="progress">Progress:</label>
-                           <progress class="course__progress" id="progress" max="100" value="'.$progress.'"> % </progress>
-                           <span class ="progress__span">'.$progress.'% complete</span>
+                           <progress class="course__progress" id="progress" max="100" value="'.$progress_round.'"> % </progress>
+                           <span class ="progress__span">'.$progress_round.'% complete</span>
                         </div>
                        
                      </form>';

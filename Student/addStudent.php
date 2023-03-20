@@ -12,24 +12,52 @@ if(isset($_POST['checkEmail']) && isset($_POST['studentEmail'])){
    echo json_encode($row);
 }
 
-if(isset($_POST['studentSignUp']) && isset($_POST['studentName']) && isset($_POST['studentEmail']) && isset($_POST['studentPassword'])){
+      // function addStudent($con){
+      //    if(isset($_POST['studentSignUp']) && isset($_POST['studentName']) && isset($_POST['studentEmail']) && isset($_POST['studentPassword'])){
    
-   $studentName = $_POST['studentName'];
-   $studentEmail = $_POST['studentEmail'];
-   $studentPassword = hash("sha512",$_POST['studentPassword']);
-   $studentPassword2 = hash("sha512",$_POST['studentPassword2']);
+      //       $studentName = $_POST['studentName'];
+      //       $studentEmail = $_POST['studentEmail'];
+      //       $studentPassword = hash("sha512",$_POST['studentPassword']);
+      //       $studentPassword2 = hash("sha512",$_POST['studentPassword2']);
+         
+      //       if($studentPassword == $studentPassword2){
+      //          $query = "INSERT INTO students(student_name,student_email,student_password) VALUES ('$studentName','$studentEmail','$studentPassword')";
+      //       }
+            
+            
+      //       if($con->query($query) == true){
+      //          echo json_encode("OK");
+      //       }else{
+      //          echo json_encode("Failed");
+      //       }
+      //    }
+      // }
 
-   if($studentPassword == $studentPassword2){
-      $query = "INSERT INTO students(student_name,student_email,student_password) VALUES ('$studentName','$studentEmail','$studentPassword')";
-   }
-   
-   
-   if($con->query($query) == true){
-      echo json_encode("OK");
-   }else{
-      echo json_encode("Failed");
-   }
-}
+
+      function addStudent($con){
+            $studentName = $_POST['studentName'];
+            $studentEmail = $_POST['studentEmail'];
+            $studentPassword = hash("sha512",$_POST['studentPassword']);
+            $studentPassword2 = hash("sha512",$_POST['studentPassword2']);
+         
+            if($studentPassword == $studentPassword2){
+               $query = "INSERT INTO students(student_name,student_email,student_password) VALUES ('$studentName','$studentEmail','$studentPassword')";
+            }
+            
+            
+            if($con->query($query) == true){
+               echo json_encode("OK");
+            }else{
+               echo json_encode("Failed");
+            }
+         }
+      
+         if(isset($_POST['studentSignUp'])  && isset($_POST['studentName']) && isset($_POST['studentEmail']) && isset($_POST['studentPassword'])){
+            addStudent($con);
+            exit;
+         }
+
+
 
 if(!isset($_SESSION['student_has_logged'])){
    if(isset($_POST["checkStudentEmail"]) && isset($_POST["studentLoginEmail"]) && isset($_POST["studentLoginPassword"])){

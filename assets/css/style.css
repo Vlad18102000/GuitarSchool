@@ -493,10 +493,8 @@ body.no-scroll {
   .sidebar {
     display: flex;
     flex-direction: column;
-    top: 4rem;
-    height: calc(100vh - 4rem);
     padding-bottom: 3.5rem;
-    overflow: auto;
+    overflow: hidden;
     transform: translateX(-100%);
     transition: transform 0.2s linear;
   }
@@ -1537,6 +1535,7 @@ body.no-scroll {
 @media screen and (max-width: 991px) {
   .burger {
     display: block;
+    margin-top: 30px;
   }
 }
 
@@ -1719,6 +1718,9 @@ body.no-scroll {
   border: none;
   margin-bottom: 5px;
 }
+.course__progress--admin {
+  margin-bottom: 0;
+}
 
 progress::-webkit-progress-bar {
   border-radius: 5px;
@@ -1738,6 +1740,9 @@ progress::-moz-progress-bar {
 .progress__span {
   font-size: 13px;
   margin-top: 10px;
+}
+.progress__span--admin {
+  text-align: center;
 }
 
 .progress_label {
@@ -2172,6 +2177,71 @@ td {
   font-weight: 500;
   margin-top: 3rem;
   margin-bottom: 2rem;
+}
+
+.comments {
+  margin-top: 5rem;
+}
+.comments > .comments {
+  padding-left: 3rem;
+  margin-top: 0;
+}
+@media screen and (max-width: 575px) {
+  .comments > .comments {
+    padding-left: 1.5rem;
+  }
+}
+
+.comments__item {
+  margin-bottom: 3rem;
+}
+
+.comments__header {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.comments__avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.comments__author {
+  padding-left: 1.5rem;
+  flex-grow: 1;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.comments__name {
+  color: #fff;
+  font-weight: 500;
+}
+
+.comments__pubdate {
+  color: #757575;
+}
+
+.comments__text {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.comments__reply {
+  color: #3137c9;
+  font-family: inherit;
+  font-size: 1.2rem;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  line-height: 1.1;
+}
+.comments__reply:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=style.css.map */

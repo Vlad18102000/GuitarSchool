@@ -1,6 +1,6 @@
 .burger{
    display: none;
- 
+   
    width: 3rem;
    height: 2rem;
    position: absolute;
@@ -64,6 +64,8 @@
 
    @include brakepoint($tablet-bp){
       display: block;
+      margin-top: 30px;
    }
+
 }
 
